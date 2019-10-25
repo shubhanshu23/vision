@@ -18,15 +18,15 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>AEMVisionAI</groupId>
-        <artifactId>AEMVisionAI</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <groupId>vision</groupId>
+        <artifactId>vision</artifactId>
+        <version>vision</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-    <artifactId>AEMVisionAI.core</artifactId>
+    <artifactId>vision.core</artifactId>
     <packaging>bundle</packaging>
-    <name>AEMVisionAI - Core</name>
-    <description>Core bundle for AEMVisionAI</description>
+    <name>vision - Core</name>
+    <description>Core bundle for vision</description>
     <build>
         <plugins>
             <plugin>
@@ -62,10 +62,51 @@
                         <Import-Package>
                             javax.inject;version=0.0.0,
                             javax.annotation;version=0.0.0,
+                            !afu.org.checkerframework.checker.formatter.qual,
+                            !afu.org.checkerframework.checker.nullness.qual,
+                            !afu.org.checkerframework.checker.regex.qual,
+                            !afu.org.checkerframework.checker.units.qual,
+                            !afu.org.checkerframework.dataflow.qual,
+                            !afu.org.checkerframework.framework.qual,
+                            !com.google.protobuf.nano,
+                            !com.jcraft.jzlib,
+                            !com.ning.compress,
+                            !com.ning.compress.lzf,
+                            !com.ning.compress.lzf.util,
+                            !com.oracle.svm.core.annotate,
+                            !lzma.sdk,
+                            !lzma.sdk.lzma,
+                            !net.jpountz.lz4,
+                            !net.jpountz.xxhash,
+                            !org.apache.logging.log4j,
+                            !org.apache.logging.log4j.message,
+                            !org.apache.logging.log4j.spi,
+                            !org.bouncycastle.asn1.x500,
+                            !org.bouncycastle.cert,
+                            !org.bouncycastle.cert.jcajce,
+                            !org.bouncycastle.jce.provider,
+                            !org.bouncycastle.operator,
+                            !org.bouncycastle.operator.jcajce,
+                            !org.checkerframework.checker.formatter.qual,
+                            !org.checkerframework.checker.nullness.qual,
+                            !org.checkerframework.checker.regex.qual,
+                            !org.checkerframework.checker.units.qual,
+                            !org.checkerframework.dataflow.qual,
+                            !org.checkerframework.framework.qual,
+                            !org.conscrypt,
+                            !org.eclipse.jetty.alpn,
+                            !org.eclipse.jetty.npn,
+                            !org.jboss.marshalling,
+                            !sun.misc,
+                            !sun.security.util,
+                            !sun.security.x509,
                             *
                         </Import-Package>
+                        <Embed-Dependency>*;scope=compile|runtime</Embed-Dependency>
+                        <Embed-Directory>OSGI-INF/lib</Embed-Directory>
+                        <Embed-Transitive>true</Embed-Transitive>
                         <Sling-Model-Packages>
-                            AEMVisionAI.core
+                            vision.core
                         </Sling-Model-Packages>
                         <_dsannotations>*</_dsannotations>
                         <_metatypeannotations>*</_metatypeannotations>
@@ -167,6 +208,16 @@
         <dependency>
             <groupId>uk.org.lidalia</groupId>
             <artifactId>slf4j-test</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.cloud</groupId>
+            <artifactId>google-cloud-vision</artifactId>
+            <version>1.96.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>25.1-android</version>
         </dependency>
     </dependencies>
 </project>
