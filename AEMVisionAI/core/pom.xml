@@ -18,15 +18,15 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>vision</groupId>
-        <artifactId>vision</artifactId>
-        <version>vision</version>
+        <groupId>AEMVisionAI</groupId>
+        <artifactId>AEMVisionAI</artifactId>
+        <version>1.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-    <artifactId>vision.core</artifactId>
+    <artifactId>AEMVisionAI.core</artifactId>
     <packaging>bundle</packaging>
-    <name>vision - Core</name>
-    <description>Core bundle for vision</description>
+    <name>AEMVisionAI - Core</name>
+    <description>Core bundle for AEMVisionAI</description>
     <build>
         <plugins>
             <plugin>
@@ -106,7 +106,7 @@
                         <Embed-Directory>OSGI-INF/lib</Embed-Directory>
                         <Embed-Transitive>true</Embed-Transitive>
                         <Sling-Model-Packages>
-                            vision.core
+                            AEMVisionAI.core
                         </Sling-Model-Packages>
                         <_dsannotations>*</_dsannotations>
                         <_metatypeannotations>*</_metatypeannotations>
@@ -212,12 +212,10 @@
         <dependency>
             <groupId>com.google.cloud</groupId>
             <artifactId>google-cloud-vision</artifactId>
-            <version>1.96.0</version>
         </dependency>
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>25.1-android</version>
         </dependency>
     </dependencies>
 </project>
